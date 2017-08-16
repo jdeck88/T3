@@ -24,7 +24,7 @@ print("Will use lang '%s'" % (lang))
 builder = pyocr.builders.TextBuilder()
 
 
-filename="THE_NATIONAL_MARINE_HABITAT_CLASSIFICATI.pdf"
+filename="sample/input/THE_NATIONAL_MARINE_HABITAT_CLASSIFICATI.pdf"
  
 #with Image(filename=filename) as img:
 #     print('pages = ', len(img.sequence))
@@ -40,6 +40,7 @@ with(Image(filename=filename,resolution=200)) as source:
     for i in range(pages):
         #Image(images[i]).save(filename=str(i)+'.png')
         #ilename="test.png"
+        # this is failing ...
         txt = tool.image_to_string(
             images[i],
             lang=lang,
@@ -47,8 +48,9 @@ with(Image(filename=filename,resolution=200)) as source:
         )
         print(txt)
 
-        with codecs.open("output.txt", 'w', encoding='utf-8') as file_descriptor:
-            builder.write_file(file_descriptor, txt)
+        # write output
+        #with codecs.open("output.txt", 'w', encoding='utf-8') as file_descriptor:
+        #    builder.write_file(file_descriptor, txt)
 
 
 
