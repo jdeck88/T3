@@ -1,4 +1,4 @@
-# NOTE: see https://github.com/skatje-myers/ClearEarthHackathon/tree/master/Group_10  for current version of this repo.
+# NOTE: see https://github.com/skatje-myers/ClearEarthHackathon/tree/master/Group_10  for current version of this README
 
 
 # T3: A Text-based Toolset for building Taxonomies
