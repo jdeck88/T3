@@ -18,7 +18,7 @@ T3 follows a pipeline model for data processing with entry or exit at any point 
     
 3. Keyword Extraction
    
-    REF ClearEarth tools...
+    REF ClearEarth tools.  Need link to Ontoboot. Goal here is see if this is available for incorporation in pipeline here.
      
 4. Build Taxonomy
 
