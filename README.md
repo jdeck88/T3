@@ -1,4 +1,8 @@
+# NOTE: see https://github.com/skatje-myers/ClearEarthHackathon/tree/master/Group_10  for current version of this repo.
+
+
 # T3: A Text-based Toolset for building Taxonomies
+
 
 The Text-based Toolset for building Taxonomies (T3) is a proposed python package and virtual machine image whose purpose will be to aid in the processing of raw text (stored as PDFs, HTML, Text) to quickly build taxonomies (represented in the Web Ontology Language- OWL).  The word "taxonomy" used here broadly defines any classification of related words or phrases denoting a type of subsumption relationship or heirarchy of terms.   While there exists a myriad of tools for creating text from images, annotating text, cleaning up text, and building taxonomies or ontologies, the processing steps are often disjoint and difficult to use.  The intended goal here is to streamline this process in a single accessible package, thereby accelerating the pace of work and lowering barriers for participation.  This work was initiated at the ClearEarth hackathon in Boulder, CO in August, 2017.
 
