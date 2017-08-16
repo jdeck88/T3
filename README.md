@@ -1,6 +1,6 @@
 # T3: A Text-based Toolset for building Taxonomies
 
-The Text-based Toolset for building Taxonomies (T3) is a proposed python package and virtual machine image whose purpose will be to aid in the processing of raw text (stored as PDFs, HTML, Text) for extracting keywords, assist with data cleanup, and quickly build taxonomies (represented in the Web Ontology Language- OWL).  The word "taxonomy" used here broadly defines any classification of related words or phrases denoting a type of subsumption relationship or heirarchy of terms.   While there exists a myriad of tools for creating text from images, annotating text, cleaning up text, and building taxonomies from text, the processing steps are often disjoint and difficult to use.  The intended goal here is to streamline this process in a single accessible package, thereby accelerating the pace of work and lowering barriers for participation and development of the taxonomies themselves.  This work was initiated at the ClearEarth hackathon in Boulder, CO in August, 2017.
+The Text-based Toolset for building Taxonomies (T3) is a proposed python package and virtual machine image whose purpose will be to aid in the processing of raw text (stored as PDFs, HTML, Text) for extracting keywords, assist with data cleanup of raw text files, and quickly build taxonomies (represented in the Web Ontology Language- OWL).  The word "taxonomy" used here broadly defines any classification of related words or phrases denoting a type of subsumption relationship or heirarchy of terms.   While there exists a myriad of tools for creating text from images, annotating text, cleaning up text, and building taxonomies from text, the processing steps are often disjoint and difficult to use.  The intended goal here is to streamline this process in a single accessible package, thereby accelerating the pace of work and lowering barriers for participation and development of the taxonomies themselves.  This work was initiated at the ClearEarth hackathon in Boulder, CO in August, 2017.
 
 T3 has two intended outputs: 1) development of a python package and 2) development of a virtual machine (VM) image which containing a pre-built Linux based environment available through CyVerse Atmosphere. 
 
@@ -12,7 +12,9 @@ T3 follows a pipeline model for data processing with entry or exit at any point 
 
 2. Data Cleanup
 
-    Some data cleanup difficulties encountered during the ClearEarth hackathon
+    Some data cleanup difficulties encountered during the ClearEarth hackathon included easily scriptable functions, such as:
+     * removing hard linebreaks in mid-sentence
+     * automatically remove page headers, section headings, figure captions, references, and bibliographies
     
 3. Keyword Extraction
    
