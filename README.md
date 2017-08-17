@@ -37,9 +37,9 @@ The following sections describe what each of the steps do in the process.py scri
     
 Take harvested PDF files and convert them to readable text.  Sample ocr python script for PDF files.
     
-    ```
-    python process.py ocr sample/input/sample.pdf sample/output/sample_ocr.txt
-    ```
+``` 
+python process.py ocr sample/input/sample.pdf sample/output/sample_ocr.txt
+```
 
 Package Options:
   * [pyocr](https://github.com/openpaperwork/pyocr) works well but is slow.
