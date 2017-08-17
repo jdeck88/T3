@@ -18,13 +18,14 @@ following proposed steps:
    
 1. ocr
     
-    Convert PDFs raw text.  
+    Take harvested PDF files and convert them to readable text.  
     
     INPUT: {pdf|jpg}
     OUTPUT: text
 
     Package Options:
     * [pyocr](https://github.com/openpaperwork/pyocr) works well but is slow.
+    * others?
 
 2. cleanup
 
