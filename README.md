@@ -12,56 +12,69 @@ work and lowering barriers for participation.
 T3 currently has two intended outputs: 1) development of a python package and 2) development of a virtual machine (VM) image 
 which containing a pre-built Linux based environment available through CyVerse Atmosphere. 
 
-## The T3 pipeline
-T3 follows a pipeline model for data processing with entry or exit at any point in the data processing chain, with the 
-following proposed steps:
+The following steps are available in the process.py script:
+
+```
+usage: process.py [-h]
+                  [ocr,cleanup,keywords,discovery,build_owl] input_file
+                  output_file
+
+T3: A Toolset for processing Text and building Taxonomies
+
+positional arguments:
+  [ocr,cleanup,keywords,discovery,build_owl]
+                        Choose one of the following options:
+                        ocr,cleanup,keywords,discovery,build_owl
+  input_file            Input PDF file location
+  output_file           Output Text file location
+
+optional arguments:
+  -h, --help            show this help message and exit
+```
    
-1. ocr
+## ocr
     
-    Take harvested PDF files and convert them to readable text.  
+    Take harvested PDF files and convert them to readable text.  Sample ocr python script for PDF files.
     
-    INPUT: {pdf|jpg}
-    OUTPUT: text
+    ```
+    python process.py ocr sample/input/sample.pdf sample/output/sample_ocr.txt
+    ```
 
     Package Options:
     * [pyocr](https://github.com/openpaperwork/pyocr) works well but is slow.
     * others?
 
-2. cleanup
+## cleanup
 
-    Data cleanup tasks encountered during the ClearEarth hackathon include removing hard linebreaks in mid-sentence, 
-    page headers, section headings, figure captions, references, and bibliographies.  Doing these tasks by hands is time consuming.  
-    Brian Stucky has started on development of tools for this step and i'm sure others have useful scripts.
-    INPUT: text
-    OUTPUT: text
-    OPTIONS: Process on an individual file or a directory. 
+No actual cleanup scripts here yet...
+Data cleanup tasks encountered during the ClearEarth hackathon include removing hard linebreaks in mid-sentence, 
+page headers, section headings, figure captions, references, and bibliographies.  Doing these tasks by hands is time consuming.  
+Brian Stucky has started on development of tools for this step and i'm sure others have useful scripts.
     
-3. keywords
+## keywords
    
-    Need link to to keyword extraction software and see if it is available for incorporation in this pipeline.
-    INPUT: text
-    OUTPUT: a simple text list of keywords 
+No actual keyword generation scripts here yet... From Brian Stucky's work, the keyword generation works best when guided by words harvested from an index.  Brian's work is available at his [github repository)[https://gitlab.com/stuckyb/gkphrases]
 
-    Package Options:  
-     * rake-nltk
+Packages Tested: Visited rake-nltk package but did not find to be useful
 
      
-4. discovery
+## discovery
     
-    Automated subsumption relationship discovery relying on previously acquired training set data.
-    INPUT: text
-    OUTPUT: tab delimited text file with {ID, child, parent, probability score{}}
+Automated subsumption relationship discovery relying on previously acquired training set data. The following script should theoretically work, assuming the clearOnto website is up:
 
-    Package Options:
+```
+python process.py discovery sample/output/sample_ocr.txt sample/output/sample_discovery.csv 
+```
+Output of this command is a tab-separated value (TSV) listing of parent/child relationships between terms.
+
+Packages Tested:
      *  clearOnto website-- in development.  The current package relies on screen-scraping output and generating text.  This is a super brittle approach, just for demostration.  What we're demonstrating here is some of the expected outputs.
     
-5. build_owl
+## build_owl
 
     Automatically build OWL files and setup project for further work using a simple parent/child CSV file.  The goal for this step is to take a single CSV file with the correct
 information and we can setup an ontology build project.  [ontopilot](https://github.com/stuckyb/ontopilot) is very close to providing a completely automated solution for building an ontology and 
-associated configuration files directly from a CSV file simply defining parent/child relationships.  
-
-The following are steps taken to automatically create the ontology:
+associated configuration files directly from a CSV file simply defining parent/child relationships.   The following are steps taken to automatically create the ontology:
 
 ```
 mkdir sample/ontopilot_sample_class
@@ -71,9 +84,10 @@ cp {a CSV file with class relationships} src/entities/sample_classes_1.csv
 # may need to edit project.conf file here-- check this
 ontopilot make ontology
 ```
-The output from the above steps is stored in sample/ontopilot_sample_class/ontology/sample_classes-raw.owl
 
-Another sample file is produced on instance data and stored in sample/ontopilot_individual_class/ontology/ontopilot_individual-raw.owl
+As a summary, the input files for the constructing the files is (sample_classes_1.csv) and the output is [sample_classes-raw.owl](https://raw.githubusercontent.com/jdeck88/T3/master/sample/ontopilot_sample_class/ontology/sample_classes-raw.owl) 
+
+Another sample file is produced on instance data with the input file of [sample_individuals_1.csv](https://github.com/jdeck88/T3/blob/master/sample/ontopilot_individual_class/src/entities/sample_individuals_1.csv) and the output file of [sample_individuals-raw.owl](https://raw.githubusercontent.com/jdeck88/T3/master/sample/ontopilot_individual_class/ontology/ontopilot_individual-raw.owl
 
     
 ## Software and dependencies
