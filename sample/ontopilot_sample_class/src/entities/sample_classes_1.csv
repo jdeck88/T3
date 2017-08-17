@@ -1,0 +1,12 @@
+ID,Type,Label,Parent
+1,Class,red,'color'
+2,Class,'Barry Bonds','person'
+3,Class,village,'settlement'
+4,Class,rubble,'environmental feature'
+5,Class,five,'number'
+6,Class,'Pier Buttigieg','person'
+7,Class,number,
+8,Class,'environmental feature',
+9,Class,settlement,
+10,Class,person,
+11,Class,color,

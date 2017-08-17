@@ -1,0 +1,2 @@
+Name,IRI,Entities file,Ignore
+Basic Formal Ontology,http://purl.obolibrary.org/obo/bfo.owl,bfo_sample_classes_entities.csv,yes
