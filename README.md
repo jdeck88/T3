@@ -82,7 +82,7 @@ cp {a CSV file with class relationships} src/entities/sample_classes_1.csv
 ontopilot make ontology
 ```
 
-A sample of this was run on files in this repository using the input file [sample_classes_1.csv](https://github.com/jdeck88/T3/blob/master/sample/ontopilot_sample_class/src/entities/sample_classes_1.csv) with the output file [sample_classes-raw.owl](https://raw.githubusercontent.com/jdeck88/T3/master/sample/ontopilot_sample_class/ontology/sample_classes-raw.owl) 
+A sample of this was run on files in this repository using the input file [sample_classes_1.csv](https://github.com/jdeck88/T3/blob/master/sample/ontopilot_sample_class/src/entities/sample_classes_1.csv) with the output file [sample_classes-raw.owl](https://raw.githubusercontent.com/jdeck88/T3/master/sample/ontopilot_sample_class/ontology/sample_classes-raw.owl) and visualized by [sample_output.png](https://github.com/jdeck88/T3/blob/master/sample_output.png)
 
 Another sample file using only instance with input file [sample_individuals_1.csv](https://github.com/jdeck88/T3/blob/master/sample/ontopilot_individual_class/src/entities/sample_individuals_1.csv) and output file  [sample_individuals-raw.owl](https://raw.githubusercontent.com/jdeck88/T3/master/sample/ontopilot_individual_class/ontology/ontopilot_individual-raw.owl)
 
