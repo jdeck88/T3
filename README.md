@@ -64,7 +64,7 @@ Packages Tested: Visited rake-nltk package but did not find to be useful
      
 ## discovery
     
-Automated subsumption relationship discovery relying on previously acquired training set data. The following script should theoretically work, assuming the clearOnto website is up:
+Automated subsumption relationship discovery relying on previously acquired training set data. I first attempted to install the actual software on my own computer but was never able to get source code running.  Just to follow this proof of concept i wrote a python wrapper around the clearOnto website.  The following script should theoretically work, assuming the clearOnto website is up:
 
 ```
 python process.py discovery sample/output/sample_ocr.txt sample/output/sample_discovery.csv 
