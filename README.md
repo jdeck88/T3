@@ -53,17 +53,28 @@ following proposed steps:
     OUTPUT: tab delimited text file with {ID, child, parent, probability score{}}
 
     Package Options:
-     *  clearOnto website-- in development. 
+     *  clearOnto website-- in development.  The current package relies on screen-scraping output and generating text.  This is a super brittle approach, just for demostration.  What we're demonstrating here is some of the expected outputs.
     
 5. build_owl
 
-    Automatically build OWL files and setup project for further work using a simple parent/child CSV file. Current status is that we need to configure
-ontopilot to do this directly or build a tool to manage ontopilot separately.
+    Automatically build OWL files and setup project for further work using a simple parent/child CSV file.  The goal for this step is to take a single CSV file with the correct
+information and we can setup an ontology build project.  [ontopilot](https://github.com/stuckyb/ontopilot) is very close to providing a completely automated solution for building an ontology and 
+associated configuration files directly from a CSV file simply defining parent/child relationships.  
 
-    Package Options:
-    * [ontopilot](https://github.com/stuckyb/ontopilot) is very close to providing a completely automated solution for building an ontology and 
-associated configuration files directly from a CSV file simply defining parent/child relationships.  The appropriate tabular data structures are produced during the keyword extraction step.  
-    
+The following are steps taken to automatically create the ontology:
+
+```
+mkdir sample/ontopilot_sample_class
+cd sample/ontopilot_sample_class
+ontopilot init
+cp {a CSV file with class relationships} src/entities/sample_classes_1.csv
+# may need to edit project.conf file here-- check this
+ontopilot make ontology
+```
+The output from the above steps is stored in sample/ontopilot_sample_class/ontology/sample_classes-raw.owl
+
+Another sample file is produced on instance data and stored in sample/ontopilot_individual_class/ontology/ontopilot_individual-raw.owl
+
     
 ## Software and dependencies
 
