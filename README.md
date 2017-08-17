@@ -12,7 +12,6 @@ work and lowering barriers for participation.
 T3 currently has two intended outputs: 1) development of a python package and 2) development of a virtual machine (VM) image 
 which containing a pre-built Linux based environment available through CyVerse Atmosphere. 
 
-The following steps are available in the process.py script:
 
 ```
 usage: process.py [-h]
@@ -32,6 +31,8 @@ optional arguments:
   -h, --help            show this help message and exit
 ```
    
+The following sections describe what each of the steps do in the process.py script:
+
 ## ocr
     
     Take harvested PDF files and convert them to readable text.  Sample ocr python script for PDF files.
