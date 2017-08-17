@@ -47,14 +47,17 @@ Package Options:
 
 ## cleanup
 
-No actual cleanup scripts here yet...
+No actual cleanup scripts here yet
+
 Data cleanup tasks encountered during the ClearEarth hackathon include removing hard linebreaks in mid-sentence, 
 page headers, section headings, figure captions, references, and bibliographies.  Doing these tasks by hands is time consuming.  
 Brian Stucky has started on development of tools for this step and i'm sure others have useful scripts.
     
 ## keywords
    
-No actual keyword generation scripts here yet... From Brian Stucky's work, the keyword generation works best when guided by words harvested from an index.  Brian's work is available at his [github repository)[https://gitlab.com/stuckyb/gkphrases]
+No actual keyword generation scripts here yet 
+
+From Brian Stucky's work, the keyword generation works best when guided by words harvested from an index.  Brian's work is available at his [github repository)[https://gitlab.com/stuckyb/gkphrases]
 
 Packages Tested: Visited rake-nltk package but did not find to be useful
 
@@ -73,22 +76,17 @@ Packages Tested:
     
 ## build_owl
 
-    Automatically build OWL files and setup project for further work using a simple parent/child CSV file.  The goal for this step is to take a single CSV file with the correct
-information and we can setup an ontology build project.  [ontopilot](https://github.com/stuckyb/ontopilot) is very close to providing a completely automated solution for building an ontology and 
-associated configuration files directly from a CSV file simply defining parent/child relationships.   The following are steps taken to automatically create the ontology:
+ Automatically build OWL files and setup project for further work using a simple parent/child CSV file.  The goal for this step is to take a single CSV file with the correct information and we can setup an ontology build project.  In an ideal world, we pipe information from the discovery section into this script.  [Ontopilot](https://github.com/stuckyb/ontopilot) was used for testing automated ontology building by starting with a single CSV file defining parent/child relationships.   The following are steps take to run this (ontopilot software must be downloaded and installed first):
 
 ```
-mkdir sample/ontopilot_sample_class
-cd sample/ontopilot_sample_class
 ontopilot init
 cp {a CSV file with class relationships} src/entities/sample_classes_1.csv
-# may need to edit project.conf file here-- check this
 ontopilot make ontology
 ```
 
-As a summary, the input files for the constructing the files is (sample_classes_1.csv) and the output is [sample_classes-raw.owl](https://raw.githubusercontent.com/jdeck88/T3/master/sample/ontopilot_sample_class/ontology/sample_classes-raw.owl) 
+A sample of this was run on files in this repository using the input file (sample_classes_1.csv) with the output file [sample_classes-raw.owl](https://raw.githubusercontent.com/jdeck88/T3/master/sample/ontopilot_sample_class/ontology/sample_classes-raw.owl) 
 
-Another sample file is produced on instance data with the input file of [sample_individuals_1.csv](https://github.com/jdeck88/T3/blob/master/sample/ontopilot_individual_class/src/entities/sample_individuals_1.csv) and the output file of [sample_individuals-raw.owl](https://raw.githubusercontent.com/jdeck88/T3/master/sample/ontopilot_individual_class/ontology/ontopilot_individual-raw.owl
+Another sample file using only instance with input file [sample_individuals_1.csv](https://github.com/jdeck88/T3/blob/master/sample/ontopilot_individual_class/src/entities/sample_individuals_1.csv) and output file  [sample_individuals-raw.owl](https://raw.githubusercontent.com/jdeck88/T3/master/sample/ontopilot_individual_class/ontology/ontopilot_individual-raw.owl
 
     
 ## Software and dependencies
